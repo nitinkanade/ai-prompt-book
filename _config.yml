@@ -8,8 +8,8 @@ description: >-
   Curated library of tested AI image prompts for Midjourney, Stable Diffusion,
   DALL-E and Gemini. Copy in one tap, remix with your own photo, and create
   stunning AI art with the free AI Prompt Book Android app.
-url: "https://aipromptbook.github.io"
-baseurl: "/ai-prompt-book"
+url: "https://aipromptbook.ni18.in"
+baseurl: ""
 lang: en
 
 # App info (reused across pages)
