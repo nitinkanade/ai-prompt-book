@@ -28,6 +28,7 @@ let activeCategory = 'anime';
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initPromptsShowcase();
+    enhanceBlogPrompts();
 });
 
 /**
@@ -310,4 +311,67 @@ function escapeHtml(unsafe) {
          .replace(/>/g, "&gt;")
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;");
+}
+
+/**
+ * Scans the blog post body for prompt blockquotes and enhances them into copyable boxes.
+ */
+function enhanceBlogPrompts() {
+    const articleBody = document.querySelector('.blog-body-content');
+    if (!articleBody) return;
+    
+    const blockquotes = articleBody.querySelectorAll('blockquote');
+    blockquotes.forEach(bq => {
+        const text = bq.innerText || bq.textContent;
+        const hasImagine = text.includes('/imagine');
+        const codeElement = bq.querySelector('code');
+        
+        if (hasImagine || codeElement) {
+            let promptText = '';
+            let label = 'Tested Prompt';
+            
+            if (hasImagine) {
+                const imagineIndex = text.indexOf('/imagine');
+                promptText = text.substring(imagineIndex).trim();
+                
+                const prefix = text.substring(0, imagineIndex).trim().toLowerCase();
+                if (prefix.includes('try this') || prefix.includes('experiment')) {
+                    label = 'Prompt Experiment';
+                } else if (prefix.includes('workflow') || prefix.includes('premium')) {
+                    label = 'Premium Workflow';
+                }
+            } else if (codeElement) {
+                promptText = codeElement.innerText || codeElement.textContent;
+                promptText = promptText.trim();
+                
+                if (promptText.length < 20) return;
+                
+                const textBeforeCode = bq.innerText.replace(promptText, '').trim().toLowerCase();
+                if (textBeforeCode.includes('remix') || textBeforeCode.includes('idea')) {
+                    label = 'Remix Prompt';
+                } else if (textBeforeCode.includes('try this') || textBeforeCode.includes('experiment')) {
+                    label = 'Prompt Experiment';
+                }
+            }
+            
+            if (!promptText) return;
+            
+            const container = document.createElement('div');
+            container.className = 'blog-prompt-box';
+            container.innerHTML = `
+                <div class="blog-prompt-header">
+                    <span>${label}</span>
+                    <button class="copy-prompt-icon-btn material-symbols-outlined" title="Copy Prompt">content_copy</button>
+                </div>
+                <code class="blog-prompt-code">${escapeHtml(promptText)}</code>
+            `;
+            
+            const copyBtn = container.querySelector('.copy-prompt-icon-btn');
+            copyBtn.addEventListener('click', () => {
+                window.copyText(promptText, copyBtn);
+            });
+            
+            bq.parentNode.replaceChild(container, bq);
+        }
+    });
 }
