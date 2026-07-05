@@ -1,4 +1,8 @@
+---
+layout: null
+permalink: /robots.txt
+---
 User-agent: *
 Allow: /
 
-Sitemap: https://nitinkanade.github.io/ai-prompt-book/sitemap.xml
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

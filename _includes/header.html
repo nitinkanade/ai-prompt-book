@@ -1,0 +1,28 @@
+<!-- Sticky Navigation Header -->
+<header class="sticky-header glass">
+    <div class="max-width-container header-container">
+        <a class="brand-logo font-display text-gradient" href="{{ '/' | relative_url }}" id="brand-logo-link">AI Prompt Book</a>
+
+        <nav class="nav-links">
+            <a class="nav-link" href="{{ '/#features' | relative_url }}" id="nav-features-link">Features</a>
+            <a class="nav-link{% if page.url == '/how-to-use/' %} active{% endif %}" href="{{ '/how-to-use/' | relative_url }}" id="nav-howto-link">How to Use</a>
+            <a class="nav-link{% if page.url contains '/blog' or page.layout == 'post' %} active{% endif %}" href="{{ '/blog/' | relative_url }}" id="nav-blog-link">Blog</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="{{ site.play_store_url }}" class="btn btn-primary" id="header-cta-btn" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">download</span>
+                Install App
+            </a>
+            <button class="hamburger material-symbols-outlined" id="hamburger-btn" aria-label="Toggle navigation menu">menu</button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Menu Overlay -->
+<div class="nav-mobile-overlay" id="mobile-nav-menu">
+    <a href="{{ '/#features' | relative_url }}" id="mobile-features-link">Features</a>
+    <a href="{{ '/how-to-use/' | relative_url }}" id="mobile-howto-link">How to Use</a>
+    <a href="{{ '/blog/' | relative_url }}" id="mobile-blog-link">Blog</a>
+    <a href="{{ site.play_store_url }}" class="btn btn-primary" id="mobile-cta-btn" target="_blank" rel="noopener" style="margin-top: 16px;">Install App</a>
+</div>
