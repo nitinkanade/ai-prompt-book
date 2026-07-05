@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nitinkanade.github.io/ai-prompt-book/sitemap.xml
