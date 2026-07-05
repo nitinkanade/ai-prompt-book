@@ -1,0 +1,61 @@
+# Site settings — when you configure a custom domain later:
+#   1. Set url to "https://yourdomain.com" and baseurl to ""
+#   2. Add a CNAME file containing the domain (GitHub does this automatically
+#      when you set the domain in repo Settings > Pages)
+title: AI Prompt Book
+tagline: Copy & Remix Creative AI Art Prompts
+description: >-
+  Curated library of tested AI image prompts for Midjourney, Stable Diffusion,
+  DALL-E and Gemini. Copy in one tap, remix with your own photo, and create
+  stunning AI art with the free AI Prompt Book Android app.
+url: "https://nitinkanade.github.io"
+baseurl: "/ai-prompt-book"
+lang: en
+
+# App info (reused across pages)
+play_store_url: "https://play.google.com/store/apps/details?id=in.ni18.aipromptbook"
+company_url: "https://www.ni18.in/"
+support_email: "support@ni18.in"
+logo: "https://lh3.googleusercontent.com/aida-public/AB6AXuBhDmOTESylZjMUxZ5JuInWYwZ9vAjFIpT1cZ9hVxGQ9VgrxuiFOpk7z_g8vF5NMIijMZzrdE_GWHWyXs1geYjdQKPg6wRFjp6v2rfO783I4EZV_7qB2d7_EyT00hv1a5SnsW8cIHDOEEI4Zq1JpbwRQ43CVEjPkrZZ89lqZm6bpRoKwWD3M-vzd_W1lUODSE-g5KmYidEmb3Zd4PbAnCWuTkKXH81204D8fhO0O_AhvPbXJ3SfpjUQFU4LJ3yBOeeIcn0"
+
+author:
+  name: AI Prompt Book Team
+
+twitter:
+  card: summary_large_image
+
+social:
+  name: AI Prompt Book
+  links:
+    - https://www.ni18.in/
+
+# Blog permalinks: /blog/post-slug/
+permalink: /blog/:title/
+
+# GitHub Pages whitelisted plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  posts_limit: 20
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: AI Prompt Book Team
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBhDmOTESylZjMUxZ5JuInWYwZ9vAjFIpT1cZ9hVxGQ9VgrxuiFOpk7z_g8vF5NMIijMZzrdE_GWHWyXs1geYjdQKPg6wRFjp6v2rfO783I4EZV_7qB2d7_EyT00hv1a5SnsW8cIHDOEEI4Zq1JpbwRQ43CVEjPkrZZ89lqZm6bpRoKwWD3M-vzd_W1lUODSE-g5KmYidEmb3Zd4PbAnCWuTkKXH81204D8fhO0O_AhvPbXJ3SfpjUQFU4LJ3yBOeeIcn0"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

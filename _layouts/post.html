@@ -1,0 +1,71 @@
+---
+layout: default
+main_class: blog-main
+---
+<article class="max-width-container blog-post-article" itemscope itemtype="https://schema.org/BlogPosting">
+
+    <header class="blog-post-header">
+        <div class="blog-meta-row">
+            <span class="blog-meta-tag">{{ page.category | default: 'Tutorials' }}</span>
+            <span>•</span>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</time>
+            <span>•</span>
+            <span>{% assign words = content | strip_html | number_of_words %}{{ words | divided_by: 200 | at_least: 1 }} min read</span>
+        </div>
+
+        <h1 class="font-display blog-title-main" itemprop="headline">{{ page.title }}</h1>
+    </header>
+
+    {% if page.image %}
+    <div class="blog-featured-image">
+        <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}" itemprop="image">
+    </div>
+    {% endif %}
+
+    <div class="blog-body-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+    <!-- App CTA -->
+    <div class="glass" style="border-radius: 24px; padding: 32px 24px; text-align: center; margin-top: 48px;">
+        <h3 class="font-display title-card" style="margin-bottom: 12px;">Want prompts like these on your phone?</h3>
+        <p class="text-muted-styled" style="max-width: 480px; margin: 0 auto 24px auto;">
+            Get hundreds of tested, ready-to-copy AI image prompts in the free AI Prompt Book Android app.
+        </p>
+        <a href="{{ site.play_store_url }}" class="btn btn-primary" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">download</span>
+            Download on Google Play
+        </a>
+    </div>
+
+    <!-- Author Card -->
+    <footer class="author-card">
+        <div>
+            <div class="author-name font-display">{{ page.author | default: site.author.name }}</div>
+            <div class="author-title">AI Prompt Book Editorial</div>
+        </div>
+    </footer>
+
+</article>
+
+<!-- Related Posts Section -->
+{% assign related = site.posts | where_exp: 'p', 'p.url != page.url' %}
+{% if related.size > 0 %}
+<section class="related-section">
+    <h3 class="font-display related-title">More Guides</h3>
+    <div class="related-grid">
+        {% for p in related limit: 3 %}
+        <div class="related-card">
+            {% if p.image %}
+            <div class="related-img-wrapper">
+                <a href="{{ p.url | relative_url }}"><img src="{{ p.image }}" alt="{{ p.image_alt | default: p.title }}" loading="lazy"></a>
+            </div>
+            {% endif %}
+            <span class="related-tag font-display">{{ p.category | default: 'Tutorial' }}</span>
+            <h4 class="font-display related-heading"><a href="{{ p.url | relative_url }}" style="color: inherit;">{{ p.title }}</a></h4>
+            <p class="related-desc">{{ p.description | truncate: 110 }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}

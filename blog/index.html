@@ -1,0 +1,34 @@
+---
+layout: default
+title: "AI Prompting Guides & Tutorials Blog"
+description: "Tutorials, prompt guides, and style breakdowns for Midjourney, Stable Diffusion, DALL-E, and Gemini. Learn prompt engineering from the AI Prompt Book team."
+permalink: /blog/
+---
+<section class="blog-preview-section" style="padding-top: 64px;">
+    <div class="max-width-container">
+        <div class="section-header">
+            <h1 class="font-display title-section">Prompting Guides &amp; Tutorials</h1>
+            <p>Master AI image generation with practical, tested prompt engineering guides.</p>
+        </div>
+
+        <div class="blog-grid">
+            {% for post in site.posts %}
+            <article class="blog-card">
+                {% if post.image %}
+                <div class="blog-img-wrapper">
+                    <a href="{{ post.url | relative_url }}">
+                        <img src="{{ post.image }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">
+                    </a>
+                </div>
+                {% endif %}
+                <div class="blog-card-meta">
+                    <span class="blog-tag">{{ post.category | default: 'Tutorial' }}</span>
+                    <a href="{{ post.url | relative_url }}" class="blog-card-title font-display">{{ post.title }}</a>
+                    <p>{{ post.description | truncate: 140 }}</p>
+                    <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.7;"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time></p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

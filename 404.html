@@ -1,3 +1,8 @@
+---
+layout: null
+permalink: /404.html
+sitemap: false
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
 </head>
 <body>
     <main style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px;">
@@ -18,7 +23,7 @@
         <p class="text-muted-styled" style="max-width: 440px; margin: 16px auto 32px auto; font-size: 1.1rem;">
             The page you're looking for doesn't exist or has been moved. Head back to the home page to explore AI art prompts.
         </p>
-        <a href="index.html" class="btn btn-primary" id="not-found-home-btn">
+        <a href="{{ '/' | relative_url }}" class="btn btn-primary" id="not-found-home-btn">
             <span class="material-symbols-outlined">home</span>
             Go to Home
         </a>

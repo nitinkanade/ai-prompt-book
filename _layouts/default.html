@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0c10">
+    <meta name="robots" content="index, follow">
+
+    {% seo %}
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} Blog" href="{{ '/feed.xml' | relative_url }}">
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}?v=4">
+    {% if page.head_extra %}{{ page.head_extra }}{% endif %}
+</head>
+<body>
+
+    {% include header.html %}
+
+    <main{% if page.main_class %} class="{{ page.main_class }}"{% endif %}>
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="{{ '/js/app.js' | relative_url }}?v=4"></script>
+</body>
+</html>

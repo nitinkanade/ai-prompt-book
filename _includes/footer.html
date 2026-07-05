@@ -1,0 +1,39 @@
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="max-width-container footer-grid">
+        <div class="footer-brand">
+            <h4 class="font-display text-gradient">AI Prompt Book</h4>
+            <p>Curated image prompt engineering platform for designers, artists, and creators.</p>
+        </div>
+        <div class="footer-column">
+            <h5>Platform</h5>
+            <a href="{{ '/#features' | relative_url }}" id="footer-link-features">Features</a>
+            <a href="{{ '/how-to-use/' | relative_url }}" id="footer-link-howto">How to Use</a>
+            <a href="{{ site.play_store_url }}" target="_blank" rel="noopener" id="footer-link-download">Download App</a>
+        </div>
+        <div class="footer-column">
+            <h5>Legal</h5>
+            <a href="{{ '/privacy-policy/' | relative_url }}" id="footer-link-privacy">Privacy Policy</a>
+            <a href="{{ '/terms/' | relative_url }}" id="footer-link-terms">Terms of Service</a>
+            <a href="{{ site.company_url }}" target="_blank" rel="noopener" id="footer-link-company">ni18.in Portal</a>
+        </div>
+        <div class="footer-column">
+            <h5>Resources</h5>
+            <a href="{{ '/blog/' | relative_url }}" id="footer-link-blog">Blog Guides</a>
+            <a href="{{ '/feed.xml' | relative_url }}" id="footer-link-rss">RSS Feed</a>
+            <a href="mailto:{{ site.support_email }}" id="footer-link-contact">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="max-width-container footer-bottom">
+        <p>© {{ site.time | date: '%Y' }} AI Prompt Book &amp; <a href="{{ site.company_url }}" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">ni18.in</a>. All rights reserved. Crafted for the generative art era.</p>
+        <div class="social-links">
+            <a href="{{ site.company_url }}" target="_blank" rel="noopener" aria-label="Official Website" id="footer-social-website">
+                <span class="material-symbols-outlined" style="font-size: 20px;">public</span>
+            </a>
+            <a href="mailto:{{ site.support_email }}" aria-label="Support Mail" id="footer-social-email">
+                <span class="material-symbols-outlined" style="font-size: 20px;">mail</span>
+            </a>
+        </div>
+    </div>
+</footer>
