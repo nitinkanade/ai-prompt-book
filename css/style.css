@@ -1108,3 +1108,122 @@ footer.site-footer {
     max-width: 100%;
     border-radius: 16px;
 }
+
+/* ---------- Breadcrumbs (post pages) ---------- */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+.breadcrumbs [aria-current="page"] {
+    color: var(--primary);
+}
+
+/* ---------- Prev / Next post navigation ---------- */
+.post-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.post-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.post-nav-link:hover {
+    border-color: var(--primary);
+    background: rgba(124, 58, 237, 0.08);
+}
+
+.post-nav-next {
+    text-align: right;
+}
+
+.post-nav-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.post-nav-title {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+    .post-nav {
+        grid-template-columns: 1fr;
+    }
+    .post-nav-next {
+        text-align: left;
+    }
+}
+
+/* ---------- FAQ accordion (homepage) ---------- */
+.faq-section {
+    padding: 64px 0;
+}
+
+.faq-item {
+    border-radius: 16px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    padding: 18px 20px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    color: var(--primary);
+    font-size: 1.3rem;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    padding: 0 20px 18px 20px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
