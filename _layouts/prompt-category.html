@@ -1,0 +1,97 @@
+---
+layout: default
+---
+{% assign prompts = site.data.prompts[page.slug] %}
+{% assign cms_base = 'https://nitinkanade.github.io/ai-prompt-book-content/' %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Prompts", "item": "{{ '/prompts/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.category_name | jsonify }} }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": {{ page.title | jsonify }},
+  "numberOfItems": {{ prompts | size }},
+  "itemListElement": [
+    {% for p in prompts %}
+    { "@type": "ListItem", "position": {{ forloop.index }}, "name": {{ p.title | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<section class="prompt-library-section">
+    <div class="max-width-container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <span aria-hidden="true">›</span>
+            <a href="{{ '/prompts/' | relative_url }}">Prompts</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">{{ page.category_name }}</span>
+        </nav>
+
+        <div class="section-header" style="text-align: left; margin-bottom: 32px;">
+            <h1 class="font-display title-section">{{ page.heading }}</h1>
+            <p class="text-muted-styled" style="max-width: 720px; margin-top: 12px;">{{ page.intro }}</p>
+        </div>
+
+        <div class="prompt-grid">
+            {% for p in prompts %}
+            <article class="lib-prompt-card glass">
+                <div class="lib-prompt-img-wrapper">
+                    <img src="{{ cms_base }}{{ p.imageUrl }}" alt="{{ p.title }} — AI-generated preview image for this {{ page.category_name | downcase }} prompt" loading="lazy" decoding="async">
+                </div>
+                <div class="lib-prompt-card-body">
+                    <div class="lib-prompt-card-meta">
+                        <h2 class="font-display lib-prompt-card-title">{{ p.title }}</h2>
+                        <span class="blog-tag">{{ p.tool }}</span>
+                    </div>
+                    <p class="lib-prompt-text">{{ p.prompt }}</p>
+                    {% if p.tags %}
+                    <div class="lib-prompt-tags">
+                        {% for t in p.tags %}<span class="lib-prompt-tag">#{{ t }}</span>{% endfor %}
+                    </div>
+                    {% endif %}
+                    <button class="btn btn-secondary prompt-copy-btn" data-prompt="{{ p.prompt | escape }}">
+                        <span class="material-symbols-outlined">content_copy</span>
+                        Copy Prompt
+                    </button>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- App CTA -->
+        <div class="glass" style="border-radius: 24px; padding: 32px 24px; text-align: center; margin-top: 48px;">
+            <h3 class="font-display title-card" style="margin-bottom: 12px;">Want the full {{ page.category_name }} collection?</h3>
+            <p class="text-muted-styled" style="max-width: 480px; margin: 0 auto 24px auto;">
+                These are a preview. The free AI Prompt Book Android app has the complete library with new prompts added over the air — copy in one tap or remix with your own photo.
+            </p>
+            <a href="{{ site.play_store_url }}" class="btn btn-primary" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">download</span>
+                Download on Google Play
+            </a>
+        </div>
+
+        <!-- Other categories -->
+        <section style="margin-top: 56px;">
+            <h3 class="font-display related-title">Browse More Prompt Categories</h3>
+            <div class="category-chip-row">
+                {% for c in site.data.prompts.categories %}
+                {% unless c.slug == page.slug %}
+                <a class="category-chip glass" href="{{ '/prompts/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a>
+                {% endunless %}
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</section>

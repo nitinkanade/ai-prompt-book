@@ -1,0 +1,33 @@
+# AI Prompt Book
+
+> AI Prompt Book is a free Android app with a curated library of tested AI image prompts for Midjourney, Stable Diffusion, DALL-E, and Gemini. Users can copy prompts in one tap, save favorites offline, and remix any style with their own photo. The website hosts a browsable prompt library and prompt-engineering guides.
+
+Download: https://play.google.com/store/apps/details?id=in.ni18.aipromptbook
+Publisher: ni18.in (support@ni18.in)
+
+## Prompt Library
+
+- [All categories](https://aipromptbook.ni18.in/prompts/): Browse tested AI image prompts by category
+- [Anime prompts](https://aipromptbook.ni18.in/prompts/anime/): Anime-style AI art prompts
+- [Wallpaper prompts](https://aipromptbook.ni18.in/prompts/wallpapers/): Phone and desktop background prompts
+- [Fantasy prompts](https://aipromptbook.ni18.in/prompts/fantasy/): Dragons, mages, and epic world prompts
+- [Logo prompts](https://aipromptbook.ni18.in/prompts/logos/): Vector logo and brand mark prompts
+- [Character prompts](https://aipromptbook.ni18.in/prompts/characters/): Original character and portrait prompts
+- [Poster prompts](https://aipromptbook.ni18.in/prompts/poster/): Cinematic poster art prompts
+- [Couple prompts](https://aipromptbook.ni18.in/prompts/couples/): Romantic portrait and photo remix prompts
+
+## Guides
+
+- [How to use the app](https://aipromptbook.ni18.in/how-to-use/): Install to first artwork in five minutes
+- [Blog](https://aipromptbook.ni18.in/blog/): Prompt engineering tutorials and comparisons
+- [Beginner's guide to AI image prompts](https://aipromptbook.ni18.in/blog/how-to-write-ai-image-prompts-beginners-guide/)
+- [Midjourney vs DALL-E vs Stable Diffusion comparison](https://aipromptbook.ni18.in/blog/best-ai-image-generator-comparison/)
+- [Consistent characters in AI art](https://aipromptbook.ni18.in/blog/consistent-characters-ai-art/)
+- [Negative prompts guide](https://aipromptbook.ni18.in/blog/negative-prompts-guide/)
+- [AI logo prompt formula](https://aipromptbook.ni18.in/blog/ai-logo-prompts-ideas/)
+- [Trending photo remix ideas](https://aipromptbook.ni18.in/blog/ai-photo-remix-ideas-trending/)
+
+## Optional
+
+- [Privacy policy](https://aipromptbook.ni18.in/privacy-policy/)
+- [Terms of service](https://aipromptbook.ni18.in/terms/)

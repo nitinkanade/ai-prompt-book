@@ -29,7 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initPromptsShowcase();
     enhanceBlogPrompts();
+    initLibraryCopyButtons();
 });
+
+/**
+ * Wire up copy buttons on the static prompt library pages (/prompts/)
+ */
+function initLibraryCopyButtons() {
+    document.querySelectorAll('.prompt-copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            window.copyText(btn.dataset.prompt, btn);
+        });
+    });
+}
 
 /**
  * Initialize Mobile Navigation Toggle

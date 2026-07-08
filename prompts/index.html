@@ -1,0 +1,42 @@
+---
+layout: default
+title: "AI Image Prompt Library — Tested Prompts by Category"
+description: "Browse free, tested AI image prompts by category: anime, wallpapers, fantasy, logos, characters, posters and couples. Copy any prompt and use it in Midjourney, DALL-E, Stable Diffusion, or Gemini."
+permalink: /prompts/
+---
+<section class="prompt-library-section">
+    <div class="max-width-container">
+        <div class="section-header">
+            <h1 class="font-display title-section">AI Image Prompt Library</h1>
+            <p style="max-width: 680px; margin: 12px auto 0 auto;">
+                Every prompt here is tested against real generators — Midjourney, Stable Diffusion, DALL-E, and Gemini — with a preview image so you know the style before you copy. Pick a category to start.
+            </p>
+        </div>
+
+        <div class="category-grid">
+            {% assign cms_base = 'https://nitinkanade.github.io/ai-prompt-book-content/' %}
+            {% for c in site.data.prompts.categories %}
+            <a class="category-card glass" href="{{ '/prompts/' | append: c.slug | append: '/' | relative_url }}">
+                <div class="category-card-img">
+                    <img src="{{ cms_base }}{{ c.image }}" alt="{{ c.name }} AI prompt examples — category cover" loading="lazy" decoding="async">
+                </div>
+                <div class="category-card-body">
+                    <h2 class="font-display title-card">{{ c.name }}</h2>
+                    <span class="text-muted-styled">{{ c.promptCount }} featured prompt{% if c.promptCount != 1 %}s{% endif %} →</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="glass" style="border-radius: 24px; padding: 32px 24px; text-align: center; margin-top: 48px;">
+            <h3 class="font-display title-card" style="margin-bottom: 12px;">Hundreds more in the free app</h3>
+            <p class="text-muted-styled" style="max-width: 480px; margin: 0 auto 24px auto;">
+                The website shows a curated preview of each category. Get the complete, always-growing library — with one-tap copy, offline favorites, and Photo Remix — in the free Android app.
+            </p>
+            <a href="{{ site.play_store_url }}" class="btn btn-primary" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">download</span>
+                Download on Google Play
+            </a>
+        </div>
+    </div>
+</section>
