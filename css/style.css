@@ -147,6 +147,9 @@ header.sticky-header {
     left: 0;
     width: 100%;
     z-index: 1000;
+    /* Near-opaque so scrolled content vanishes cleanly behind the bar
+       (overrides the more transparent .glass background) */
+    background: rgba(10, 12, 16, 0.96);
     border-bottom: 1px solid var(--border-subtle);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
