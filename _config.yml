@@ -32,6 +32,12 @@ social:
 # Blog permalinks: /blog/post-slug/
 permalink: /blog/:title/
 
+# Search engine site verification (rendered by jekyll-seo-tag).
+# Paste the content value from Search Console's HTML-tag method:
+# webmaster_verifications:
+#   google: "your-google-verification-code"
+#   bing: "your-bing-verification-code"
+
 # GitHub Pages whitelisted plugins
 plugins:
   - jekyll-seo-tag

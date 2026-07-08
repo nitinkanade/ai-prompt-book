@@ -2,13 +2,36 @@
 layout: default
 main_class: blog-main
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ '/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ '/blog/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+  ]
+}
+</script>
+
 <article class="max-width-container blog-post-article" itemscope itemtype="https://schema.org/BlogPosting">
 
     <header class="blog-post-header">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <span aria-hidden="true">›</span>
+            <a href="{{ '/blog/' | relative_url }}">Blog</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">{{ page.category | default: 'Tutorials' }}</span>
+        </nav>
         <div class="blog-meta-row">
             <span class="blog-meta-tag">{{ page.category | default: 'Tutorials' }}</span>
             <span>•</span>
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</time>
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: '%B %d, %Y' }}</time>
+            {% if page.last_modified_at %}
+            <span>•</span>
+            <span>Updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: '%B %d, %Y' }}</time></span>
+            {% endif %}
             <span>•</span>
             <span>{% assign words = content | strip_html | number_of_words %}{{ words | divided_by: 200 | at_least: 1 }} min read</span>
         </div>
@@ -41,15 +64,35 @@ main_class: blog-main
     <!-- Author Card -->
     <footer class="author-card">
         <div>
-            <div class="author-name font-display">{{ page.author | default: site.author.name }}</div>
+            <div class="author-name font-display" itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">{{ page.author | default: site.author.name }}</span></div>
             <div class="author-title">AI Prompt Book Editorial</div>
         </div>
     </footer>
 
+    <!-- Previous / Next Post Navigation -->
+    {% if page.previous or page.next %}
+    <nav class="post-nav" aria-label="More articles">
+        {% if page.previous %}
+        <a class="post-nav-link" href="{{ page.previous.url | relative_url }}" rel="prev">
+            <span class="post-nav-label">← Older article</span>
+            <span class="post-nav-title font-display">{{ page.previous.title }}</span>
+        </a>
+        {% endif %}
+        {% if page.next %}
+        <a class="post-nav-link post-nav-next" href="{{ page.next.url | relative_url }}" rel="next">
+            <span class="post-nav-label">Newer article →</span>
+            <span class="post-nav-title font-display">{{ page.next.title }}</span>
+        </a>
+        {% endif %}
+    </nav>
+    {% endif %}
+
 </article>
 
-<!-- Related Posts Section -->
-{% assign related = site.posts | where_exp: 'p', 'p.url != page.url' %}
+<!-- Related Posts Section: same category first, then most recent -->
+{% assign same_category = site.posts | where_exp: 'p', 'p.url != page.url' | where: 'category', page.category %}
+{% assign other_posts = site.posts | where_exp: 'p', 'p.url != page.url' | where_exp: 'p', 'p.category != page.category' %}
+{% assign related = same_category | concat: other_posts %}
 {% if related.size > 0 %}
 <section class="related-section">
     <h3 class="font-display related-title">More Guides</h3>
