@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Cyberpunk City",
+    "category": "wallpapers",
+    "imageUrl": "images/wallpapers/cyberpunk-city.webp",
+    "tool": "Midjourney",
+    "tags": [
+      "cyberpunk",
+      "city",
+      "neon"
+    ],
+    "prompt": "A vertical smartphone wallpaper of a cyberpunk city street at night, glowing neon kanji signs, rain-slicked streets with beautiful reflections of neon light, futuristic hovercars parked along the curb, towering high-tech skyscrapers with glowing windows stretching into the foggy sky, cinematic lighting, 8k resolution, shot on 35mm lens, photorealistic texture, detailed futuristic urban environment."
+  },
+  {
+    "id": 2,
+    "title": "Mountain Sunrise",
+    "category": "wallpapers",
+    "imageUrl": "images/wallpapers/mountain-sunrise.webp",
+    "tool": "Stable Diffusion",
+    "tags": [
+      "mountains",
+      "sunrise",
+      "nature"
+    ],
+    "prompt": "Stunning vertical landscape photograph of a pristine mountain valley at sunrise. Golden morning sunlight illuminating majestic snow-capped peaks, a crystal-clear alpine lake reflecting the mountains perfectly, soft mist rising from the water, lush pine trees on the shore, warm orange and cool blue sky, high-detail texture, cinematic composition, mobile wallpaper format."
+  },
+  {
+    "id": 3,
+    "title": "Minimal Space Orbit",
+    "category": "wallpapers",
+    "imageUrl": "images/wallpapers/minimal-space-orbit.webp",
+    "tool": "DALL-E",
+    "tags": [
+      "space",
+      "minimal",
+      "planet"
+    ],
+    "prompt": "Minimalist aesthetic vertical wallpaper of a single glowing turquoise planet with delicate rings, orbiting a distant bright white star. Deep black space background, subtle scatter of tiny glittering stars, elegant cosmic composition, high contrast, clean modern look, perfect for smartphone background."
+  },
+  {
+    "id": 4,
+    "title": "Forest Rain Path",
+    "category": "wallpapers",
+    "imageUrl": "images/wallpapers/forest-rain-path.webp",
+    "tool": "Leonardo AI",
+    "tags": [
+      "forest",
+      "rain",
+      "path"
+    ],
+    "prompt": "Cinematic vertical shot of a narrow wooden walking path winding through a dense, lush green forest immediately after a summer rain. Golden sunlight filtering through wet, sparkling leaves, soft morning mist rising from the forest floor, wet wooden planks reflecting the light, rich natural greens and earthy tones, highly detailed, peaceful mood."
+  },
+  {
+    "id": 5,
+    "title": "Abstract Glass Waves",
+    "category": "wallpapers",
+    "imageUrl": "images/wallpapers/abstract-glass-waves.webp",
+    "tool": "Firefly",
+    "tags": [
+      "abstract",
+      "glass",
+      "waves"
+    ],
+    "prompt": "Abstract premium vertical background design. Translucent, fluid glass waves with iridescent colors gently flowing and overlapping, soft light reflections and refractions, clean gradient backdrop of pastel pink and blue, high contrast, ultra-sharp detail, modern aesthetic."
+  }
+]
+

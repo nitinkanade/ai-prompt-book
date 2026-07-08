@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "title": "Student Under Cherry Blossoms",
+    "category": "anime",
+    "imageUrl": "images/anime/student-cherry-blossoms.webp",
+    "tool": "Midjourney",
+    "tags": [
+      "anime",
+      "school",
+      "spring"
+    ],
+    "prompt": "High-quality original anime-style key art of a high school student standing under blooming cherry blossom trees. Warm spring afternoon sun filtering through the pink petals, soft petals drifting in the gentle breeze, clean lines, vibrant pastel colors, extremely detailed background, gorgeous aesthetic."
+  },
+  {
+    "id": 2,
+    "title": "Sky Train Journey",
+    "category": "anime",
+    "imageUrl": "images/anime/sky-train-journey.webp",
+    "tool": "Stable Diffusion",
+    "tags": [
+      "anime",
+      "train",
+      "sky"
+    ],
+    "prompt": "Gorgeous original anime illustration of a bright locomotive train traveling along a track built across fluffy clouds during a breathtaking sunset. Wide sky painted with orange and pink hues, peaceful passengers looking out, soft magical lighting, whimsical atmosphere, highly detailed environment, cinematic composition."
+  },
+  {
+    "id": 3,
+    "title": "Moonlit Garden Mage",
+    "category": "anime",
+    "imageUrl": "images/anime/moonlit-garden-mage.webp",
+    "tool": "Leonardo AI",
+    "tags": [
+      "anime",
+      "mage",
+      "moonlight"
+    ],
+    "prompt": "Stunning original anime style artwork of a young mage wearing an elegant dark robe in a moonlit garden. Glowing floating lanterns casting warm golden light, magical blue sparkles drifting around, peaceful facial expression, highly detailed glowing fantasy flowers, enchanting atmosphere, family-friendly."
+  },
+  {
+    "id": 4,
+    "title": "Cozy Cafe Artist",
+    "category": "anime",
+    "imageUrl": "images/anime/cozy-cafe-artist.webp",
+    "tool": "DALL-E",
+    "tags": [
+      "anime",
+      "cafe",
+      "artist"
+    ],
+    "prompt": "Beautiful original anime style scene of a young artist sketching in a sketchbook inside a cozy cafe. Warm morning sunlight streaming through large glass windows, indoor plants hanging, warm drinks steaming on wooden tables, calm relaxing mood, highly detailed cafe interior, expressive character design."
+  },
+  {
+    "id": 5,
+    "title": "Stargazing Friends",
+    "category": "anime",
+    "imageUrl": "images/anime/stargazing-friends.webp",
+    "tool": "Firefly",
+    "tags": [
+      "anime",
+      "friends",
+      "stars"
+    ],
+    "prompt": "Wholesome original anime illustration of a group of friends stargazing together on a lush grassy hill. A telescope set up nearby, a vast clear night sky filled with the Milky Way galaxy and soft glowing shooting stars, cinematic deep-blue color palette, detailed landscape, emotional and friendly atmosphere."
+  }
+]

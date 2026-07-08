@@ -1,0 +1,51 @@
+[
+  {
+    "id": 4,
+    "name": "Characters",
+    "slug": "characters",
+    "image": "images/characters/cover.webp",
+    "promptCount": 2
+  },
+  {
+    "id": 7,
+    "name": "Poster",
+    "slug": "poster",
+    "image": "images/poster/cover.webp",
+    "promptCount": 2
+  },
+  {
+    "id": 6,
+    "name": "Couples",
+    "slug": "couples",
+    "image": "images/couples/cover.webp",
+    "promptCount": 1
+  },
+  {
+    "id": 1,
+    "name": "Wallpapers",
+    "slug": "wallpapers",
+    "image": "images/wallpapers/cover.webp",
+    "promptCount": 5
+  },
+  {
+    "id": 2,
+    "name": "Anime",
+    "slug": "anime",
+    "image": "images/anime/cover.webp",
+    "promptCount": 5
+  },
+  {
+    "id": 3,
+    "name": "Fantasy",
+    "slug": "fantasy",
+    "image": "images/fantasy/cover.webp",
+    "promptCount": 5
+  },
+  {
+    "id": 5,
+    "name": "Logos",
+    "slug": "logos",
+    "image": "images/logos/cover.webp",
+    "promptCount": 5
+  }
+]
