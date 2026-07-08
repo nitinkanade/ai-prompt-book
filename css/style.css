@@ -26,6 +26,8 @@
 /* --- 2. Base & Resets --- */
 html {
     scroll-behavior: smooth;
+    /* Keeps anchor-link targets clear of the fixed sticky header */
+    scroll-padding-top: 96px;
 }
 
 *, *::before, *::after {
