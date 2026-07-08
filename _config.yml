@@ -70,3 +70,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+
+# Android App Links verification file — Jekyll skips dot-folders by default
+include:
+  - .well-known

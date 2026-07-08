@@ -18,15 +18,37 @@ sitemap: false
 </head>
 <body>
     <main style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px;">
-        <span class="material-symbols-outlined" style="font-size: 72px; color: var(--primary); margin-bottom: 24px;">explore_off</span>
-        <h1 class="font-display title-large">404 — Page Not Found</h1>
-        <p class="text-muted-styled" style="max-width: 440px; margin: 16px auto 32px auto; font-size: 1.1rem;">
-            The page you're looking for doesn't exist or has been moved. Head back to the home page to explore AI art prompts.
-        </p>
-        <a href="{{ '/' | relative_url }}" class="btn btn-primary" id="not-found-home-btn">
-            <span class="material-symbols-outlined">home</span>
-            Go to Home
-        </a>
+        <div id="not-found-content" style="display: flex; flex-direction: column; align-items: center;">
+            <span class="material-symbols-outlined" style="font-size: 72px; color: var(--primary); margin-bottom: 24px;">explore_off</span>
+            <h1 class="font-display title-large">404 — Page Not Found</h1>
+            <p class="text-muted-styled" style="max-width: 440px; margin: 16px auto 32px auto; font-size: 1.1rem;">
+                The page you're looking for doesn't exist or has been moved. Head back to the home page to explore AI art prompts.
+            </p>
+            <a href="{{ '/' | relative_url }}" class="btn btn-primary" id="not-found-home-btn">
+                <span class="material-symbols-outlined">home</span>
+                Go to Home
+            </a>
+        </div>
+        <!-- Shown instead of the 404 message for shared app deep links
+             (/p/{category}/{id} and /c/{category}) when the visitor
+             doesn't have the app installed. -->
+        <div id="deeplink-content" style="display: none; flex-direction: column; align-items: center;">
+            <span class="material-symbols-outlined" style="font-size: 72px; color: var(--primary); margin-bottom: 24px;">auto_awesome</span>
+            <h1 class="font-display title-large">This prompt lives in the app</h1>
+            <p class="text-muted-styled" style="max-width: 440px; margin: 16px auto 32px auto; font-size: 1.1rem;">
+                Install AI Prompt Book, then open this link again — it will take you straight to the prompt.
+            </p>
+            <a href="{{ site.play_store_url }}" class="btn btn-primary">
+                <span class="material-symbols-outlined">download</span>
+                Get it on Google Play
+            </a>
+        </div>
     </main>
+    <script>
+        if (/^\/(p|c)\//.test(window.location.pathname)) {
+            document.getElementById('not-found-content').style.display = 'none';
+            document.getElementById('deeplink-content').style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
