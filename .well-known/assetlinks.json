@@ -1,11 +1,14 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "in.ni18.aipromptbook",
       "sha256_cert_fingerprints": [
-        "35:B0:D4:A6:18:FF:C1:69:A2:71:1E:44:04:11:69:0E:85:8A:E2:85:E8:99:6A:3E:14:42:D1:32:93:6A:AC:69"
+        "35:B0:D4:A6:18:FF:C1:69:A2:71:1E:44:04:11:69:0E:85:8A:E2:85:E8:99:6A:3E:14:42:D1:32:93:6A:AC:69",
+        "50:F9:F3:A5:55:11:8D:9E:8F:83:B5:80:D4:6B:E9:9D:FD:8A:AB:5A:1F:45:D7:28:48:5C:CC:6A:DD:DC:94:AA"
       ]
     }
   }
